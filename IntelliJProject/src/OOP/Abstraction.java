@@ -86,7 +86,7 @@ class Derived extends Base {
     }
 }
 
-// [Example 5.0]
+// [Example 5.0]-
 abstract class AbstractEmployee {
     private String name;
     private String address;
