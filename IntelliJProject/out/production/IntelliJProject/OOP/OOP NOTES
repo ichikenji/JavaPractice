@@ -1,0 +1,158 @@
+%%%%%%%%%%   OBJECT-ORIENTED PROGRAMMING CONCEPTS   %%%%%%%%%%%%%%%%%%%%
+    Class - Object - Inheritance - Polymorphism
+    Abstraction - Encapsulation
+    
+[ CLASS ]
+    A blueprint from which individual objects are created
+    Each class has its methods and attributes that can be
+        accessed and manipulated through the objects.
+        
+    e.g. Student (Class) |  student1, student2 (Objects)
+
+[ INHERITANCE ]
+    Inheritance is the process by which we can reuse the functionalities
+    of existing classes to new classes.
+    Two terms: Base (parent) class / derived (child) class.
+
+    When a class is inherited from another class (base class), it (derived class)
+    obtains all the properties and behaviours of the base class.
+
+[ POLYMORPHISM ]
+    The term "polymorphism" means "many forms. In OOP, it is useful when you
+      want to create multiple forms with the same name of a single entity.
+    To implement polymorphism, we use two concepts:
+        1. Method Overloading : Performed in the same class where we have
+                                multiple methods with the same name but
+                                different parameters 
+
+        2. Method Overriding : Performed using the inheritance class where
+                                we can have multiple methods with the same
+                                name in parent and child classes.\
+
+[ ABSTRACTION ]
+    An abstraction is the technique of hiding internal details and revealing functionalities.
+    The abstract classes and interfaces are used to achieve abstraction in Java.
+
+    Real-life abstraction example : Car, the internal details such as the engine,
+                                    process of starting a car, process of shifting
+                                    gears, etc. are hidden from the user, and features
+                                    such as the start button, gears, display, break, etc.
+                                    are provided to the user.
+                                    When we perform any action on these features,
+                                    the internal processes work 
+
+[ CLASSES ]
+    An object is a variable of a type class. 
+    A class has methods and data members (attributes) that are accessed through an object.
+    Thus, an object is an instance of a class
+    
+    E.g. (Cars, dogs, humans etc). Theses objects have a state and a behaviour.
+    For a dog, then its state is - name, breed and color
+        and the behaviour is - barking, wagging tail and running.
+    
+    Declaration : A variable declaration with a variable name with an object type.
+    Instantiation : The 'new' keyword is used to create the object (create an instance of a class).
+    Initialisation : The 'new' keyword is followed by a call to a constructor.
+                     This call initialises the new object.
+
+        e.g. ClassName objectName = new ClassName(param1, param2);
+        e.g. objectName.variableName;   [Calling a variable]
+        e.g. objectName.methodName();   [Calling a class method]
+
+    [RULES]
+    1. There can only be ONE public class per source file.
+    2. A source file can have MULTIPLE non-public classes.
+
+[METHODS]
+    'this' keyword is used as a reference to the object of the current class,
+        within an instance method or a constructor.
+    Used to differentiate the instance variables from local variables if they
+        have same names, within a constructor or a method.
+    
+    e.g. 
+        class Student {
+            int age;
+            Student() {
+                this(20);
+            }
+
+            Student(int age) {
+                this.age = age;
+            }
+        }
+
+    [ACCESS MODIFIERS]
+        private : An access modifier where methods, variables and constructors that are 
+                    declared private can only be accessed within the declared class itself.
+                    The most restrictive access level. Class and interfaces cannot be private.
+        
+        public : An access modifier where a class, method, constructor, interfaces etc.
+                    declared public can be accessed from any other class or within the package.
+                    If the public class we're trying to access is in a different package,
+                    then the public class still needs to be imported. Because of class 
+                    inheritance, all public methods and variables of a class are inherited
+                    by its subclasses.
+        
+        protected : An access modifier where variables, methods and constructors, which are
+                        declared protected in a superclass can only be accessed by its subclasses
+                        in another package or any class within the package.
+
+                    The protected access modifier cannot be applied to classes and interfaces.
+                        Same applies to methods and fields in an interface.
+
+        default : An access modifier that means we do not explicitly declare an access modifier
+                    for a class, field, method etc.
+
+
+[CONSTRUCTORS]
+    Java constructors are special types of methods that are used to initialise an object
+        when it is created. It has the same name as its class and is syntactically similar
+        to a method. However, constructors have no explicit return type.
+        
+        Typically, you will use a constructor to give initial values to the instance variables
+            defined by the class or to perform any other start-up procedures required to make
+            a fully formed object.
+        
+    [RULES]
+        1. Name of constructors must be the same as the class name.
+        2. Java constructors do not have a return type.
+        3. There can be multiple constructors in the same class.
+            This concept is known as constructor overloading.
+        4. Access modifiers can be used with the constructors if
+            you want to modify visiiblity/accessibility.
+        5. Java provides a default constructor that is invoked during
+            the time of object creation if one is not created.
+
+[INHERITANCE]
+    A process where one class acquires the properties (methods/attributes) 
+        of another. The class which inherits the properties of another is known
+        as subclass (derived class/child class) and the class whose properties
+        are inherited is known as superclass (base class/parent class).
+
+        [BENEFITS]
+            1. Code Reusability : Features can be easily reused through inheritance.
+            2. Extensibility : The functionalities of a base class can be extended
+                                by using inheritance in a derived class.
+            3. Achieving Abstraction : Abstraction requires inheritance.
+
+
+[Aggregation]
+    An aggregation is a relationship between two classes where one class 
+        contains an instance of another class.
+    For example, when an object A contains a reference to another object B or
+        we can say Object A has a HAS-A relationship with object B, then it is
+        termed as Aggregation in Java Programming.
+    >>> Helps in code reusability
+
+[INTERFACE]
+    Like abstract classes, interfaces cannot be instantiated (used to create objects).
+    Interface methods do not have a body - the body is provided by the "implement" class.
+    On implementation of an interface, you must override all of its methods.
+    Interface methods are by default abstract and public.
+    Interface attributes are by default public, static and final.
+    Interface cannot contain a constructor.
+
+    - Used to achieve security - hide certain details and only show the
+        the essential details of an object.
+    - Java does not support multiple inheritance (a class can only inherit from one superclass).
+        However, it can be achieved with interfaces, because a class can implement multiple interfaces.
